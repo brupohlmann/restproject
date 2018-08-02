@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
-from quickstart.serializers import UserSerializer, GroupSerializer, CompanySerializer
-from .models import Company
+from quickstart.serializers import UserSerializer, GroupSerializer, ProgrammerSerializer, ProjectSerializer, LanguageSerializer
+from .models import Project, Programmer, Language
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -20,9 +20,17 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
 
-class CompanyViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows groups to be viewed or edited.
-    """
-    queryset = Company.objects.all()
-    serializer_class = CompanySerializer
+class ProjectViewSet(viewsets.ModelViewSet):
+
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+
+class ProgrammerViewSet(viewsets.ModelViewSet):
+
+    queryset = Programmer.objects.all()
+    serializer_class = ProgrammerSerializer
+
+class LanguageViewSet(viewsets.ModelViewSet):
+   
+    queryset = Language.objects.all()
+    serializer_class = LanguageSerializer
