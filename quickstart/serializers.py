@@ -37,5 +37,5 @@ class ProjectSerializer(serializers.HyperlinkedModelSerializer):
 class CeoSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Ceo
-        fields = ('name')
+        fields = ('id','name')
               
