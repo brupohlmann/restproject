@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
-from .models import Project, Programmer, Language
+
+from .models import Language, Programmer, Project
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -20,10 +21,12 @@ class ProgrammerSerializer(serializers.HyperlinkedModelSerializer):
         model = Programmer
         fields = ('id','name', 'project')
 
+
 class LanguageSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Language
         fields = ('id','name',)
+
 
 class ProjectSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
