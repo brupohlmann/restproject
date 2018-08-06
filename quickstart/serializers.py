@@ -31,7 +31,7 @@ class LanguageSerializer(serializers.HyperlinkedModelSerializer):
 class ProjectSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Project
-        fields = ('id','name','language')
+        fields = ('id','name','language', 'ceo')
 
 
 class CeoSerializer(serializers.HyperlinkedModelSerializer):
