@@ -25,6 +25,7 @@ router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
 router.register(r'languages', views.LanguageViewSet)
 router.register(r'programmers', views.ProgrammerViewSet)
+router.register(r'projects', views.ProjectViewSet)
 router.register(r'ceos', views.CeoViewSet)
 
 
